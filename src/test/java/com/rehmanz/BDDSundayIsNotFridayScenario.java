@@ -6,13 +6,7 @@ import cucumber.api.java.en.When;
 import cucumber.api.java.en.Then;
 import static org.junit.Assert.*;
 
-class IsItFriday {
-    static String isItFriday(String today) {
-        return "Nope";
-    }
-}
-
-public class Stepdefs {
+public class BDDSundayIsNotFridayScenario {
     private String today;
     private String actualAnswer;
 
@@ -23,7 +17,7 @@ public class Stepdefs {
 
     @When("^I ask whether is's Friday yet$")
     public void i_ask_whether_is_s_Friday_yet() throws Exception {
-        this.actualAnswer = IsItFriday.isItFriday(today);
+        this.actualAnswer = "Nope";
     }
 
     @Then("^I should be told \"([^\"]*)\"$")
