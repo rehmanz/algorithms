@@ -27,7 +27,7 @@ Typical applications include
 ## Implementation
 
 
-### Quick-find (Eager Approach)
+### [Quick-find](src/main/java/rehmanz/dynamic_connectivity/QuickFindUF.java) (Eager Approach)
 
 
 Given two items _p_ and _q_
