@@ -1,7 +1,6 @@
 # Dynamic Connectivity
 
-*Dynamic Connectivity* is a data structure that dynamically maintains information about the connected components 
-of a graph.
+*Dynamic Connectivity* is a data structure that dynamically maintains information about the connected components of a graph.
 
 ## Requirements & Assumptions
 Given a set of *N* objects, the algorithm must

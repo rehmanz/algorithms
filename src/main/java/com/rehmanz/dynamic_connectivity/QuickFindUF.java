@@ -1,6 +1,6 @@
-package com.rehmanz.dynamice_connectivity;
+package com.rehmanz.dynamic_connectivity;
 
-public class QuickUnionUF {
+public class QuickFindUF {
     private int[] id;
 
     /**
@@ -9,7 +9,7 @@ public class QuickUnionUF {
      * @param n
      * @throws IllegalArgumentException if n < 0
      */
-    public QuickUnionUF(int n) {
+    public QuickFindUF(int n) {
         id = new int[n];
 
         for (int i = 0; i < n; i++) {
@@ -23,16 +23,6 @@ public class QuickUnionUF {
         }
     }
 
-    // find the root of i
-    private int root(int i) {
-        validate(i);
-
-        while (i != id[i]) {
-            i = id[i];
-        }
-        return i;
-    }
-
     /**
      * Check if p and q are in the same component
      *
@@ -41,19 +31,27 @@ public class QuickUnionUF {
      * @return True if p and q are in the same component, False otherwise
      */
     public boolean connected(int p, int q) {
-        return root(p) == root(q);
+        validate(p);
+        validate(q);
+
+        return id[p] == id[q];
     }
 
-    /***
-     * Change root of p to point to root of q
+    /**
+     * Change all entries with id[p] to id[q]
      *
      * @param p
      * @param q
      */
     public void union(int p, int q) {
-        int i = root(p);
-        int j = root(q);
+        int p_id = id[p];
+        int q_id = id[q];
 
-        id[i] = j;
+        for (int i = 0; i < id.length; i++) {
+            if (id[i] == p_id) {
+                id[i] = q_id;
+            }
+        }
     }
+
 }
