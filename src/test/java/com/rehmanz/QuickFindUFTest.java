@@ -1,5 +1,6 @@
 package com.rehmanz;
 
+import com.rehmanz.dynamice_connectivity.QuickFindUF;
 import edu.princeton.cs.algs4.stdlib.*;
 
 import org.junit.After;
