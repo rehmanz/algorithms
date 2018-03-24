@@ -1,18 +1,18 @@
-package com.rehmanz;
+package com.rehmanz.dynamic_connectivity;
 
-import com.rehmanz.dynamic_connectivity.QuickFindUF;
-import edu.princeton.cs.algs4.stdlib.*;
-
+import com.rehmanz.dynamic_connectivity.QuickUnionUF;
+import edu.princeton.cs.algs4.stdlib.In;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import java.io.File;
 
-public class QuickFindUFTest {
-    String  dataDir = new File(".").getAbsolutePath() + "/src/test/resources/data/",
+public class QuickUnionUFTest {
+    String  dataDir = new File(".").getAbsolutePath() + "/src/test/resources/dynamic_connectivity/",
             dataFile = "tinyUF.txt";
     In data;
-    QuickFindUF uf;
+    QuickUnionUF uf;
 
     @Before
     public void setUp() throws Exception {
@@ -20,7 +20,7 @@ public class QuickFindUFTest {
             System.out.println(dataDir);
             data = new In(dataDir+dataFile);
             int N = data.readInt();
-            uf = new QuickFindUF(N);
+            uf = new QuickUnionUF(N);
 
         }
         catch (Exception e) { System.out.println(e); }

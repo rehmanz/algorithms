@@ -1,4 +1,4 @@
-package com.rehmanz;
+package com.rehmanz.dynamic_connectivity;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
