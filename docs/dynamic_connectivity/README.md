@@ -27,12 +27,12 @@ Typical applications include
 ## Implementation
 
 
-### [Quick-find](../../src/main/java/rehmanz/dynamic_connectivity/QuickFindUF.java) (Eager Approach)
+### [Quick-find](../../src/main/java/com/rehmanz/dynamic_connectivity/QuickFindUF.java) (Eager Approach)
 
 
 Given two items _p_ and _q_
 * change all entries with id[p] to id[q] to perform a union operation
-* are connected if id[p] === id[q]
+* are connected if `id[p] == id[q]`
 
 
 **UF Class**
