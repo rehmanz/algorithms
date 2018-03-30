@@ -51,9 +51,9 @@ public class QuickUnionUF {
      * @param q
      */
     public void union(int p, int q) {
-        int p_root = root(p);
-        int q_root = root(q);
+        int pRoot = root(p);
+        int qRoot = root(q);
 
-        id[p_root] = q_root;
+        id[pRoot] = qRoot;
     }
 }

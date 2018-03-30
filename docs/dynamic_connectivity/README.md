@@ -68,7 +68,7 @@ the second item (Union Operation)
 Quick-union is also **too slow** for cases when the tree get's really tall (Worst Case). Operation to find the root of
 the item is too expensive and could potentially require _N_ array accesses.
 
-### [Weighted Quick-union with Path Compression](../../src/main/java/com/rehmanz/dynamic_connectivity/WeightedQuickUnionUF.java)
+### [Weighted Quick-union with Path Compression](../../src/main/java/com/rehmanz/dynamic_connectivity/WeightedQuickUnionUF.java) (Optimal Approach)
 
 Given two items _p_ and _q_
 * keep track of number of objects in each tree and maintain balance by ensuring we link the root of the smaller tree to

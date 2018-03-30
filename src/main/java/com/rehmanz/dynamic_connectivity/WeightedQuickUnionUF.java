@@ -53,19 +53,19 @@ public class WeightedQuickUnionUF {
      * @param q
      */
     public void union(int p, int q) {
-        int p_root = root(p);
-        int q_root = root(q);
+        int pRoot = root(p);
+        int qRoot = root(q);
 
-        if(q_root == p_root) {
+        if(qRoot == pRoot) {
             return;
         }
 
-        if (sz[p_root] < sz[q_root]) {
-            id[p_root] = q_root;
-            sz[q_root] += sz[p_root];
+        if (sz[pRoot] < sz[qRoot]) {
+            id[pRoot] = qRoot;
+            sz[qRoot] += sz[pRoot];
         } else {
-            id[q_root] = p_root;
-            sz[p_root] += sz[q_root];
+            id[qRoot] = pRoot;
+            sz[pRoot] += sz[qRoot];
         }
 
     }
