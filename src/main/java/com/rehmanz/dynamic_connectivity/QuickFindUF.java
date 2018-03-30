@@ -44,14 +44,13 @@ public class QuickFindUF {
      * @param q
      */
     public void union(int p, int q) {
-        int p_id = id[p];
-        int q_id = id[q];
+        int pId = id[p];
+        int qId = id[q];
 
         for (int i = 0; i < id.length; i++) {
-            if (id[i] == p_id) {
-                id[i] = q_id;
+            if (id[i] == pId) {
+                id[i] = qId;
             }
         }
     }
-
 }
