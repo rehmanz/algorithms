@@ -50,12 +50,12 @@ For *10<sup>9</sup>* objects, it would take *10<sup>9</sup>* union commands. Hen
 *10<sup>18</sup>* operations or over 30 years for the fastest computer on this planet to complete the computation.
 
 
-### Quick-union (Lazy Approach)
+### [Quick-union]((../../src/main/java/com/rehmanz/dynamic_connectivity/QuickUnionUF.java)) (Lazy Approach)
 
 Given two items _p_ and _q_
 * take the root of the component containing the first item and make that child of the root of the component containing
 the second item (Union Operation)
-* 
+
 
 **QuickUnionUF Class**
 
@@ -68,7 +68,21 @@ the second item (Union Operation)
 Quick-union is also **too slow** for cases when the tree get's really tall (Worst Case). Operation to find the root of
 the item is too expensive and could potentially require _N_ array accesses.
 
-### Weighted Quick Union
+### Weighted Quick-union with Path Compression
+Given two items _p_ and _q_
+
+* keep track of number of objects in each tree and maintain balance by ensuring we link the root of the smaller tree to
+the root of the larger tree
+* guarentees that no item is not too far from the root
+
+**WeightedUnionUF Class**
+
+| Operation | Description | Complexity |
+| ----------| ----------- | ---------- |
+| `WeightedUnionUF(int N)` | Initialize Weighted-union data structure with *N* objects | N |
+| `void union(int p, int q)` | Change root of _p_ to point to root of _q_ | lg N |
+| `boolean connected(int p, int q)` | Check _p_ and _q_ have same root | lg N |
+
 
 ### Weighted Quick Union with Path Compression
 

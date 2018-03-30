@@ -1,15 +1,16 @@
 package com.rehmanz.dynamic_connectivity;
 
-public class QuickUnionUF {
+public class WeightedQuickUnionUF {
     private int[] id;
+    private int[] sz;
 
     /**
-     * Initialize union-find with n objects
+     * Initialize Weighted union-find with n objects
      *
      * @param n
      * @throws IllegalArgumentException if n < 0
      */
-    public QuickUnionUF(int n) {
+    public WeightedQuickUnionUF(int n) {
         id = new int[n];
 
         for (int i = 0; i < n; i++) {
@@ -23,11 +24,12 @@ public class QuickUnionUF {
         }
     }
 
-    // find the root of i
+    // find the root of i and make every other node in path point to it's grandparent (thereby halving path length)
     private int root(int i) {
         validate(i);
 
         while (i != id[i]) {
+            id[i] = id[id[i]];
             i = id[i];
         }
         return i;
@@ -45,7 +47,7 @@ public class QuickUnionUF {
     }
 
     /***
-     * Change root of p to point to root of q
+     * Link root of smaller tree to root of larger tree & update the size of the tree
      *
      * @param p
      * @param q
@@ -54,6 +56,17 @@ public class QuickUnionUF {
         int p_root = root(p);
         int q_root = root(q);
 
-        id[p_root] = q_root;
+        if(q_root == p_root) {
+            return;
+        }
+
+        if (sz[p_root] < sz[q_root]) {
+            id[p_root] = q_root;
+            sz[q_root] += sz[p_root];
+        } else {
+            id[q_root] = p_root;
+            sz[p_root] += sz[q_root];
+        }
+
     }
 }
