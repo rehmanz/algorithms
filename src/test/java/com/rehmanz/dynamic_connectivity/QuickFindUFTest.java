@@ -9,7 +9,7 @@ import org.junit.Test;
 import java.io.File;
 
 public class QuickFindUFTest {
-    private static final Logger logger = Logger.getLogger(QuickUnionUF.class);
+    private static final Logger logger = Logger.getLogger(QuickFindUFTest.class);
     String  dataDir = new File(".").getAbsolutePath() + "/src/test/resources/dynamic_connectivity/",
             dataFile = "tinyUF.txt";
     In data;
