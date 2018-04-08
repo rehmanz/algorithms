@@ -3,14 +3,13 @@
 ## Requirements & Assumptions
 Given an *item*, provide a consistent interface to
 
-* insert (i.e. push or enqueue)
-* remove (i.e. pop or dequeue)
+* insert (i.e. push)
+* remove (i.e. pop)
 
 
 Typical applications include
 
-* Undo mechanism in a text editor is accomplished by keeping all text changes in a stack
-* Program fetches tasks to perform one by one from the queue. 
+* "undo" mechanism is accomplished in a text editor for keeping all text changes in a stack
 
 
 ## Implementation
@@ -25,8 +24,8 @@ Typical applications include
 | Operation | Description | Complexity |
 | ----------| ----------- | ---------- |
 | `LinkedStackOfStrings()` | Initialize data structure | 1 |
-| `void push(int item)` | Push an item on stack | 1 |
-| `String pop(int item)` | Pop an item from stack | 1 |
+| `void push(String item)` | Push an item on stack | 1 |
+| `String pop(String item)` | Pop an item from stack | 1 |
 
 LinkedStackOfStrings apprach
 * maintains a Linked List structure
@@ -44,8 +43,38 @@ reference to next node)
 | Operation | Description | Complexity |
 | ----------| ----------- | ---------- |
 | `ResizingArrayStackOfStrings()` | Initialize data structure | 1 |
-| `void push(int item)` | Push an item on stack | N (Worst), 1 (Amortized) |
-| `String pop(int item)` | Pop an item from stack | N (Worst), 1 (Amortized) |
+| `void push(String item)` | Push an item on stack | N (Worst), 1 (Amortized) |
+| `String pop(String item)` | Pop an item from stack | N (Worst), 1 (Amortized) |
+
+ResizingArrayStackOfStrings approach
+* maintains an array that automatically doubles when it reaches it's capacity
+* shrinks to half when the array is quarter full
+* Constant *push* and *pop* operation (i.e. Best case scenario) without the overhead of a Linked List
+* Worst case when *push* reaches max array size or when the array is only quarter full 
+
+
+# Queues
+
+## Requirements & Assumptions
+Given an *item*, provide a consistent interface to
+
+* insert (i.e. enqueue)
+* remove (i.e. dequeue)
+
+
+Typical applications include
+
+* *Requestors* submits their tasks in the queue while *Executor* services the requests using First-In-First-Out (FIFO)
+strategy
+
+**LinkedQueueOfStrings Class**
+
+| Operation | Description | Complexity |
+| ----------| ----------- | ---------- |
+| `LinkedQueueOfStrings()` | Initialize data structure | 1 |
+| `void enqueu(String item)` | Insert a new item onto queue | 1 |
+| `String dequeue(String item)` | Remove and return the item least recently added | 1 |
+| `boolean isEmpty()` | Is the queue empty? | 1 |
 
 ResizingArrayStackOfStrings approach
 * maintains an array that automatically doubles when it reaches it's capacity
