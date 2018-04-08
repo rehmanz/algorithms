@@ -1,4 +1,4 @@
-package com.rehmanz.stack_queues;
+package com.rehmanz.stack;
 
 public class LinkedStackOfStrings {
     private Node first = null;

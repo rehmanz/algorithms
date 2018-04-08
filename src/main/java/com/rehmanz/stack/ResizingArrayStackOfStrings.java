@@ -1,4 +1,4 @@
-package com.rehmanz.stack_queues;
+package com.rehmanz.stack;
 
 public class ResizingArrayStackOfStrings {
     private String[] s;
@@ -16,10 +16,20 @@ public class ResizingArrayStackOfStrings {
         s = copy;
     }
 
+    /**
+     * Check if stack is emptry
+     *
+     * @return True if empty, False otherwise
+     */
     public boolean isEmpty() {
         return N == 0;
     }
 
+    /**
+     * Push an item on the stack
+     *
+     * @param item
+     */
     public void push(String item) {
         if (N == s.length) {
             resize(2 * s.length);
@@ -27,6 +37,11 @@ public class ResizingArrayStackOfStrings {
         s[N++] = item;
     }
 
+    /**
+     * Pop the item from the stack
+     *
+     * @return item
+     */
     public String pop() {
         String item = s[--N];
         s[N] = null;

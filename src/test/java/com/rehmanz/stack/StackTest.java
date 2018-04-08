@@ -1,4 +1,4 @@
-package com.rehmanz.stack_queues;
+package com.rehmanz.stack;
 
 import edu.princeton.cs.algs4.stdlib.In;
 import org.apache.log4j.Logger;
@@ -22,10 +22,8 @@ public class StackTest {
     @Before
     public void setUp() throws Exception {
         try {
-            logger.debug(dataDir);
             dataInput = new In(dataDir+dataInputFile);
             dataExpected = new In(dataDir+dataExpectedFile);
-
         }
         catch (Exception e) { logger.error(e); }
     }
@@ -38,7 +36,6 @@ public class StackTest {
 
     @Test
     public void testStack() {
-        logger.info("input: " + dataInput);
         while (!dataInput.isEmpty()) {
             String item = dataInput.readString();
             if (item.equals("-")) {

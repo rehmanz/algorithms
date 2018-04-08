@@ -1,4 +1,4 @@
-# Stacks & Queues
+# Stacks
 
 ## Requirements & Assumptions
 Given an *item*, provide a consistent interface to
@@ -16,7 +16,7 @@ Typical applications include
 ## Implementation
 
 
-### [Linked Stack of Strings](../../src/main/java/com/rehmanz/stack_queues/LinkedStackOfStrings.java)
+### [Linked Stack of Strings](../../src/main/java/com/rehmanz/stack/LinkedStackOfStrings.java)
 
 
 
@@ -35,7 +35,7 @@ LinkedStackOfStrings apprach
 reference to next node)
 
 
-### [Linked Stack of Strings](../../src/main/java/com/rehmanz/stack_queues/ResizingArrayStackOfStrings.java)
+### [Linked Stack of Strings](../../src/main/java/com/rehmanz/stack/ResizingArrayStackOfStrings.java)
 
 
 
