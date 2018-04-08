@@ -1,14 +1,15 @@
 package com.rehmanz.dynamic_connectivity;
 
-import com.rehmanz.dynamic_connectivity.QuickFindUF;
-import edu.princeton.cs.algs4.stdlib.*;
-
+import edu.princeton.cs.algs4.stdlib.In;
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import java.io.File;
 
 public class QuickFindUFTest {
+    private static final Logger logger = Logger.getLogger(QuickFindUFTest.class);
     String  dataDir = new File(".").getAbsolutePath() + "/src/test/resources/dynamic_connectivity/",
             dataFile = "tinyUF.txt";
     In data;
@@ -17,7 +18,7 @@ public class QuickFindUFTest {
     @Before
     public void setUp() throws Exception {
         try {
-            System.out.println(dataDir);
+            logger.debug(dataDir);
             data = new In(dataDir+dataFile);
             int N = data.readInt();
             uf = new QuickFindUF(N);
@@ -39,7 +40,7 @@ public class QuickFindUFTest {
 
             if (!uf.connected(p, q)) {
                 uf.union(p, q);
-                System.out.println(p + " " + q);
+                logger.info(p + " " + q);
             }
         }
     }
