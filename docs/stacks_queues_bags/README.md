@@ -26,6 +26,7 @@ Typical applications include
 | `LinkedStackOfGenerics()` | Initialize data structure | 1 |
 | `void push(Item item)` | Push an item on stack | 1 |
 | `Item pop(Item item)` | Pop an item from stack | 1 |
+| `Iterable<Item> Iterator()` | Iterator for all items | N |
 
 LinkedStackOfGenerics apprach
 * maintains a Linked List structure
@@ -45,6 +46,7 @@ reference to next node)
 | `ResizingArrayStackOfGenerics()` | Initialize data structure | 1 |
 | `void push(Item item)` | Push an item on stack | N (Worst), 1 (Amortized) |
 | `Item pop(Item item)` | Pop an item from stack | N (Worst), 1 (Amortized) |
+| `Iterable<Item> Iterator()` | Iterator for all items | N |
 
 ResizingArrayStackOfGenerics approach
 * maintains an array that automatically doubles when it reaches it's capacity
@@ -81,3 +83,23 @@ LinkedQueueOfGenerics approach
 * each *enqueue* and *dequeue* operation takes constant time
 * extra space needed for maintaining the overhead (i.e. each Linked List object, the inner node class and the 
 reference to next node)
+
+
+
+# Bags
+
+## Requirements & Assumptions
+Given an *item*, provide a consistent interface to insert in any order. 
+
+
+**Bag Class**
+
+| Operation | Description | Complexity |
+| ----------| ----------- | ---------- |
+| `Bag()` | Initialize data structure | 1 |
+| `void add(Item item)` | Insert a new item onto bag | 1 |
+| `int size()` | Number of items in bag | 1 |
+| `Iterable<Item> Iterator()` | Iterator for all items | N |
+
+Bag approach
+* Stack ADT (without pop) or dequeue (without dequeue)
