@@ -45,13 +45,23 @@ public class ResizingArrayStackOfGenericsTest {
             }
         }
 
+        String dataExpectedStr = dataExpected.readAll().trim();
+
+        // iteration test
+        String iterateActual = "";
+        for (Object s : stack) {
+            iterateActual += " " + (s);
+        }
+        assertEquals("Actual and expected values don't match",
+                iterateActual.trim(), dataExpectedStr);
+
+
         String dataActual = "";
         while (!stack.isEmpty()) {
             dataActual += " " + (stack.pop());
         }
 
         assertEquals("Actual and expected values don't match",
-                     dataActual.toString().trim(),
-                     dataExpected.readAll().trim());
+                     dataActual.toString().trim(), dataExpectedStr);
     }
 }
