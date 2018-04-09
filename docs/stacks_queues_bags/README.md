@@ -72,7 +72,7 @@ strategy
 | Operation | Description | Complexity |
 | ----------| ----------- | ---------- |
 | `LinkedQueueOfGenerics()` | Initialize data structure | 1 |
-| `void enqueu(Item item)` | Insert a new item onto queue | 1 |
+| `void enqueue(Item item)` | Insert a new item onto queue | 1 |
 | `Item dequeue(Item item)` | Remove and return the item least recently added | 1 |
 | `boolean isEmpty()` | Is the queue empty? | 1 |
 
