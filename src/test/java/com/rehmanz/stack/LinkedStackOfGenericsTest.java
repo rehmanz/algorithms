@@ -25,6 +25,7 @@ public class LinkedStackOfGenericsTest {
         try {
             dataInput = new In(dataDir+dataInputFile);
             dataExpected = new In(dataDir+dataExpectedFile);
+
         }
         catch (Exception e) { logger.error(e); }
     }
@@ -33,6 +34,13 @@ public class LinkedStackOfGenericsTest {
     public void tearDown() throws Exception {
         dataInput.close();
         dataExpected.close();
+    }
+
+    @Test
+    public void testIterable() {
+        for (Object s : stack) {
+            logger.debug(s);
+        }
     }
 
     @Test
@@ -46,13 +54,22 @@ public class LinkedStackOfGenericsTest {
             }
         }
 
+        String dataExpectedStr = dataExpected.readAll().trim();
+
+        // iteration test
+        String iterateActual = "";
+        for (Object s : stack) {
+            iterateActual += " " + (s);
+        }
+        assertEquals("Actual and expected values don't match",
+                     iterateActual.trim(), dataExpectedStr);
+
+        // push and pop test
         String dataActual = "";
         while (!stack.isEmpty()) {
             dataActual += " " + (stack.pop());
         }
-
         assertEquals("Actual and expected values don't match",
-                     dataActual.toString().trim(),
-                     dataExpected.readAll().trim());
+                     dataActual.toString().trim(), dataExpectedStr);
     }
 }
