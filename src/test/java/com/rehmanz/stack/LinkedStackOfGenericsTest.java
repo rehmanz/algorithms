@@ -1,4 +1,4 @@
-package com.rehmanz.queue;
+package com.rehmanz.stack;
 
 import edu.princeton.cs.algs4.stdlib.In;
 import org.apache.log4j.Logger;
@@ -11,14 +11,14 @@ import java.io.File;
 import static org.junit.Assert.assertEquals;
 
 
-public class LinkedQueueOfStringsTest {
-    private static final Logger logger = Logger.getLogger(LinkedQueueOfStringsTest.class);
-    String  dataDir = new File(".").getAbsolutePath() + "/src/test/resources/queue/",
-            dataInputFile = "taskInput.txt",
-            dataExpectedFile = "outputExpected.txt";
+public class LinkedStackOfGenericsTest {
+    private static final Logger logger = Logger.getLogger(LinkedStackOfGenericsTest.class);
+    String  dataDir = new File(".").getAbsolutePath() + "/src/test/resources/stack/",
+            dataInputFile = "toBeInput.txt",
+            dataExpectedFile = "toBeExpected.txt";
     In dataInput,
        dataExpected;
-    LinkedQueueOfStrings q = new LinkedQueueOfStrings();
+    LinkedStackOfGenerics stack = new LinkedStackOfGenerics<String>();
 
     @Before
     public void setUp() throws Exception {
@@ -36,16 +36,19 @@ public class LinkedQueueOfStringsTest {
     }
 
     @Test
-    public void testQueue() {
+    public void testStack() {
         while (!dataInput.isEmpty()) {
             String item = dataInput.readString();
-            q.enqueue(item);
-
+            if (item.equals("-")) {
+                stack.pop();
+            } else {
+                stack.push(item);
+            }
         }
 
         String dataActual = "";
-        while (!q.isEmpty()) {
-            dataActual += " " + (q.dequeue());
+        while (!stack.isEmpty()) {
+            dataActual += " " + (stack.pop());
         }
 
         assertEquals("Actual and expected values don't match",

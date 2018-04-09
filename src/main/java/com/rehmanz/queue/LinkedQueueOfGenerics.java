@@ -1,10 +1,10 @@
 package com.rehmanz.queue;
 
-public class LinkedQueueOfStrings {
+public class LinkedQueueOfGenerics<Item> {
     private Node first, last;
 
     private class Node {
-        String item;
+        Item item;
         Node next;
     }
 
@@ -22,7 +22,7 @@ public class LinkedQueueOfStrings {
      *
      * @param item
      */
-    public void enqueue(String item) {
+    public void enqueue(Item item) {
         Node oldLast = last;
         last = new Node();
         last.item = item;
@@ -40,8 +40,8 @@ public class LinkedQueueOfStrings {
      *
      * @return item
      */
-    public String dequeue() {
-        String item = first.item;
+    public Item dequeue() {
+        Item item = first.item;
         first = first.next;
 
         if (isEmpty()) {

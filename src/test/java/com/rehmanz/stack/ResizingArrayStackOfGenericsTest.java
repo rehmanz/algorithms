@@ -10,15 +10,14 @@ import java.io.File;
 
 import static org.junit.Assert.assertEquals;
 
-
-public class LinkedStackOfStringsTest {
-    private static final Logger logger = Logger.getLogger(LinkedStackOfStringsTest.class);
+public class ResizingArrayStackOfGenericsTest {
+    private static final Logger logger = Logger.getLogger(ResizingArrayStackOfGenericsTest.class);
     String  dataDir = new File(".").getAbsolutePath() + "/src/test/resources/stack/",
             dataInputFile = "toBeInput.txt",
             dataExpectedFile = "toBeExpected.txt";
     In dataInput,
        dataExpected;
-    LinkedStackOfStrings stack = new LinkedStackOfStrings();
+    ResizingArrayStackOfGenerics stack = new ResizingArrayStackOfGenerics<String>();
 
     @Before
     public void setUp() throws Exception {
