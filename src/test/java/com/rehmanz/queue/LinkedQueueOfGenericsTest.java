@@ -1,4 +1,4 @@
-package com.rehmanz.stack;
+package com.rehmanz.queue;
 
 import edu.princeton.cs.algs4.stdlib.In;
 import org.apache.log4j.Logger;
@@ -10,14 +10,15 @@ import java.io.File;
 
 import static org.junit.Assert.assertEquals;
 
-public class ResizingArrayStackOfStringsTest {
-    private static final Logger logger = Logger.getLogger(ResizingArrayStackOfStringsTest.class);
-    String  dataDir = new File(".").getAbsolutePath() + "/src/test/resources/stack/",
-            dataInputFile = "toBeInput.txt",
-            dataExpectedFile = "toBeExpected.txt";
+
+public class LinkedQueueOfGenericsTest {
+    private static final Logger logger = Logger.getLogger(LinkedQueueOfGenericsTest.class);
+    String  dataDir = new File(".").getAbsolutePath() + "/src/test/resources/queue/",
+            dataInputFile = "taskInput.txt",
+            dataExpectedFile = "outputExpected.txt";
     In dataInput,
        dataExpected;
-    ResizingArrayStackOfStrings stack = new ResizingArrayStackOfStrings();
+    LinkedQueueOfGenerics q = new LinkedQueueOfGenerics<String>();
 
     @Before
     public void setUp() throws Exception {
@@ -35,19 +36,16 @@ public class ResizingArrayStackOfStringsTest {
     }
 
     @Test
-    public void testStack() {
+    public void testQueue() {
         while (!dataInput.isEmpty()) {
             String item = dataInput.readString();
-            if (item.equals("-")) {
-                stack.pop();
-            } else {
-                stack.push(item);
-            }
+            q.enqueue(item);
+
         }
 
         String dataActual = "";
-        while (!stack.isEmpty()) {
-            dataActual += " " + (stack.pop());
+        while (!q.isEmpty()) {
+            dataActual += " " + (q.dequeue());
         }
 
         assertEquals("Actual and expected values don't match",

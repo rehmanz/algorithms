@@ -15,38 +15,38 @@ Typical applications include
 ## Implementation
 
 
-### [Linked Stack of Strings](../../src/main/java/com/rehmanz/stack/LinkedStackOfStrings.java)
+### [Linked Stack of Generics](../../src/main/java/com/rehmanz/stack/LinkedStackOfGenerics.java)
 
 
 
-**LinkedStackOfStrings Class**
+**LinkedStackOfGenerics Class**
 
 | Operation | Description | Complexity |
 | ----------| ----------- | ---------- |
-| `LinkedStackOfStrings()` | Initialize data structure | 1 |
-| `void push(String item)` | Push an item on stack | 1 |
-| `String pop(String item)` | Pop an item from stack | 1 |
+| `LinkedStackOfGenerics()` | Initialize data structure | 1 |
+| `void push(Item item)` | Push an item on stack | 1 |
+| `Item pop(Item item)` | Pop an item from stack | 1 |
 
-LinkedStackOfStrings apprach
+LinkedStackOfGenerics apprach
 * maintains a Linked List structure
 * each *push* and *pop* operation takes constant time
 * extra space needed for maintaining the overhead (i.e. each Linked List object, the inner node class and the 
 reference to next node)
 
 
-### [Linked Stack of Strings](../../src/main/java/com/rehmanz/stack/ResizingArrayStackOfStrings.java)
+### [Linked Stack of Generics](../../src/main/java/com/rehmanz/stack/ResizingArrayStackOfGenerics.java)
 
 
 
-**ResizingArrayStackOfStrings Class**
+**ResizingArrayStackOfGenerics Class**
 
 | Operation | Description | Complexity |
 | ----------| ----------- | ---------- |
-| `ResizingArrayStackOfStrings()` | Initialize data structure | 1 |
-| `void push(String item)` | Push an item on stack | N (Worst), 1 (Amortized) |
-| `String pop(String item)` | Pop an item from stack | N (Worst), 1 (Amortized) |
+| `ResizingArrayStackOfGenerics()` | Initialize data structure | 1 |
+| `void push(Item item)` | Push an item on stack | N (Worst), 1 (Amortized) |
+| `Item pop(Item item)` | Pop an item from stack | N (Worst), 1 (Amortized) |
 
-ResizingArrayStackOfStrings approach
+ResizingArrayStackOfGenerics approach
 * maintains an array that automatically doubles when it reaches it's capacity
 * shrinks to half when the array is quarter full
 * Constant *push* and *pop* operation (i.e. Best case scenario) without the overhead of a Linked List
@@ -67,16 +67,16 @@ Typical applications include
 * *Requestors* submits their tasks in the queue while *Executor* services the requests using First-In-First-Out (FIFO)
 strategy
 
-**LinkedQueueOfStrings Class**
+**LinkedQueueOfGenerics Class**
 
 | Operation | Description | Complexity |
 | ----------| ----------- | ---------- |
-| `LinkedQueueOfStrings()` | Initialize data structure | 1 |
-| `void enqueu(String item)` | Insert a new item onto queue | 1 |
-| `String dequeue(String item)` | Remove and return the item least recently added | 1 |
+| `LinkedQueueOfGenerics()` | Initialize data structure | 1 |
+| `void enqueue(Item item)` | Insert a new item onto queue | 1 |
+| `Item dequeue(Item item)` | Remove and return the item least recently added | 1 |
 | `boolean isEmpty()` | Is the queue empty? | 1 |
 
-LinkedQueueOfStrings approach
+LinkedQueueOfGenerics approach
 * maintains a linked list to dynamically add and remove items from the queue
 * each *enqueue* and *dequeue* operation takes constant time
 * extra space needed for maintaining the overhead (i.e. each Linked List object, the inner node class and the 

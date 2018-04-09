@@ -1,10 +1,10 @@
 package com.rehmanz.stack;
 
-public class LinkedStackOfStrings {
+public class LinkedStackOfGenerics<Item> {
     private Node first = null;
 
     private class Node {
-        String item;
+        Item item;
         Node next;
     }
 
@@ -22,7 +22,7 @@ public class LinkedStackOfStrings {
      *
      * @param item
      */
-    public void push(String item) {
+    public void push(Item item) {
         Node oldFirst = first;
         first = new Node();
         first.item = item;
@@ -34,8 +34,8 @@ public class LinkedStackOfStrings {
      *
      * @return item
      */
-    public String pop() {
-        String item = first.item;
+    public Item pop() {
+        Item item = first.item;
         first = first.next;
         return item;
     }
