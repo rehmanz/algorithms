@@ -20,7 +20,6 @@ Given *N* items, for each iteration *i*
 * swap *a[i]* and *a[min]*
 * increment *i*
 
-
 **SelectionSort Class**
 
 | Operation | Description | Complexity |
