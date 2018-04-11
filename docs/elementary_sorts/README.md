@@ -9,12 +9,10 @@ Given a set of *N* objects, the algorithm must
 * determine if there is a path connecting two objects (find/connected query)
 
 
-
-
 ## Implementation
 
 
-### [Selection Sort](../../src/main/java/com/rehmanz/dynamic_connectivity/QuickFindUF.java) (Eager Approach)
+### [Selection Sort](../../src/main/java/com/rehmanz/sort/SelectionSort.java)
 
 
 Given *N* items, for each iteration *i*
