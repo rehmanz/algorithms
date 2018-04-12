@@ -2,13 +2,6 @@
 
 *Elementary Sorts* rearranges *N* items into ascending order.
 
-## Requirements & Assumptions
-Given a set of *N* objects, the algorithm must
-
-* connect two objects (union opertation)
-* determine if there is a path connecting two objects (find/connected query)
-
-
 ## Implementation
 
 
