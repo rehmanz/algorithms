@@ -5,7 +5,6 @@ import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import java.io.File;
 import static org.junit.Assert.assertArrayEquals;
 
@@ -16,7 +15,6 @@ public class ElementarySortsTest {
             sortedItemsFile = "sortedItems.txt";
     In dataInput,
        dataExpected;
-    SelectionSort selectionSort = new SelectionSort();
 
     @Before
     public void setUp() throws Exception {
@@ -35,20 +33,25 @@ public class ElementarySortsTest {
 
 
     @Test
-    public void testSelectionSort() {
+    public void testElementarSort() {
         Integer size = Integer.valueOf(dataInput.readLine());
-        Integer[] inputItemsArray = new Integer[size];
+        Integer[] inputItemsSelectionArray = new Integer[size];
+        Integer[] inputItemsInsertionArray = new Integer[size];
         Integer[] expectedItemsArray = new Integer[size];
 
         for (int i = 0; i < size; i++) {
             Integer inputItem = Integer.valueOf(dataInput.readString());
-            inputItemsArray[i] = inputItem;
+            inputItemsSelectionArray[i] = inputItem;
+            inputItemsInsertionArray[i] = inputItem;
 
             Integer expectedItem = Integer.valueOf(dataExpected.readString());
             expectedItemsArray[i] = expectedItem;
         }
 
-        selectionSort.sort(inputItemsArray);
-        assertArrayEquals(inputItemsArray, expectedItemsArray);
+        SelectionSort.sort(inputItemsSelectionArray);
+        assertArrayEquals(inputItemsSelectionArray, expectedItemsArray);
+
+        InsertionSort.sort(inputItemsInsertionArray);
+        assertArrayEquals(inputItemsInsertionArray, expectedItemsArray);
     }
 }
