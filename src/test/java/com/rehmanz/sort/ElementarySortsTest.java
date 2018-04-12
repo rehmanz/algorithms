@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
+import static org.junit.Assert.assertArrayEquals;
 
 public class ElementarySortsTest {
     private static final Logger logger = Logger.getLogger(ElementarySortsTest.class);
@@ -48,20 +49,6 @@ public class ElementarySortsTest {
         }
 
         selectionSort.sort(inputItemsArray);
-
-        for (int i = 0; i < size; i++) {
-            logger.debug("actual: " + inputItemsArray[i]);
-            logger.debug("expected: " + expectedItemsArray[i]);
-//            assertEquals(inputItemsArray[i], expectedItemsArray[i]);
-//            if (inputItemsArray[i] != expectedItemsArray[i]) {
-//                logger.debug("-------");
-//                logger.debug(inputItemsArray[i]);
-//                logger.debug(expectedItemsArray[i]);
-//                logger.debug("=======");
-//            } else {
-////                logger.debug(inputItemsArray[i]);
-////                logger.debug(expectedItemsArray[i]);
-//            }
-        }
+        assertArrayEquals(inputItemsArray, expectedItemsArray);
     }
 }
