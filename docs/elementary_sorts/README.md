@@ -36,3 +36,19 @@ Given *N* items, for each iteration *i*
 
 Insertion sort is **too expensive** as it takes *N<sup>2</sup>/4* compares and *N<sup>2</sup>/4* exchanges on average.
 However, insertion sort is linear for an items array that is mostly sorted (i.e. Best case scenario).
+
+
+## [Shell Sort](../../src/main/java/com/rehmanz/sort/ShellSort.java)
+
+Given *N* items
+* move entries more than one position at a time by *h*-sorting the array
+
+
+**SelectionSort Class**
+
+| Operation | Description | Complexity |
+| ----------| ----------- | ---------- |
+| `void sort(Comparable[] a)` | Sort the items array | N<sup>3/2</sup> |
+
+Shell sort can also be **expensive** as it takes *N<sup>3/2</sup>* for the worst case to sort the array. Useful for an
+array that is already mostly sorted.
