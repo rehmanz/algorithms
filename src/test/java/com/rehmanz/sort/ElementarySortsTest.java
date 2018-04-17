@@ -33,11 +33,12 @@ public class ElementarySortsTest {
 
 
     @Test
-    public void testElementarSort() {
+    public void testSort() {
         Integer size = Integer.valueOf(dataInput.readLine());
         Integer[] inputItemsSelectionArray = new Integer[size];
         Integer[] inputItemsInsertionArray = new Integer[size];
         Integer[] inputItemsShellArray = new Integer[size];
+        Integer[] inputItemsMergeArray = new Integer[size];
         Integer[] expectedItemsArray = new Integer[size];
 
         for (int i = 0; i < size; i++) {
@@ -45,6 +46,7 @@ public class ElementarySortsTest {
             inputItemsSelectionArray[i] = inputItem;
             inputItemsInsertionArray[i] = inputItem;
             inputItemsShellArray[i] = inputItem;
+            inputItemsMergeArray[i] = inputItem;
 
             Integer expectedItem = Integer.valueOf(dataExpected.readString());
             expectedItemsArray[i] = expectedItem;
@@ -58,5 +60,8 @@ public class ElementarySortsTest {
 
         ShellSort.sort(inputItemsShellArray);
         assertArrayEquals(inputItemsShellArray, expectedItemsArray);
+
+        MergeSort.sort(inputItemsMergeArray);
+        assertArrayEquals(inputItemsMergeArray, expectedItemsArray);
     }
 }
